@@ -1,12 +1,12 @@
 # angularjs-PHP-MySQL-CRUD
-
+<h1>One Page CRUD</h1>
 <b>Resource:</b> 
-HTML
-CSS
-Bootstrap
-Angularjs
-PHP
-MySQL
+1. HTML
+2. CSS
+3. Bootstrap
+4. Angularjs
+5. PHP
+6. MySQL
 
 <b>Feature:</b> 
 1. Create 
@@ -16,4 +16,4 @@ MySQL
 5. Search Option
 6. Pagination
 
-<a href="http://dev.codeenable.com/angularjs-php-mysql-crud-demo/" target="_blank" >Demo</a>
+<a  href="http://dev.codeenable.com/angularjs-php-mysql-crud-demo/" target="_blank" >Demo</a>
