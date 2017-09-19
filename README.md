@@ -1,12 +1,12 @@
 # angularjs-PHP-MySQL-CRUD
-<h1>One Page CRUD</h1>
 <b>Resource:</b> 
-1. HTML
-2. CSS
-3. Bootstrap
+1. HTML 
+2. CSS 
+3. Bootstrap 
 4. Angularjs
 5. PHP
 6. MySQL
+
 
 <b>Feature:</b> 
 1. Create 
