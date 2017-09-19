@@ -1,2 +1,19 @@
-# angularjs-php-mysql-crud
-Angularjs -PHP-MySQL CRUD
+# ANGULARJS-PHP-MySQL-CRUD
+<b>Resource:</b> 
+1. HTML 
+2. CSS 
+3. Bootstrap 
+4. Angularjs
+5. PHP
+6. MySQL
+
+
+<b>Feature:</b> 
+1. Create 
+2. Update 
+3. View 
+4. Delete
+5. Search Option
+6. Pagination
+
+<a  href="http://dev.codeenable.com/angularjs-php-mysql-crud-demo/" target="_blank" >Demo</a>
