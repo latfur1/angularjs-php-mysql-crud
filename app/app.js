@@ -19,14 +19,6 @@ myApp.config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
 
             })
             
-                .state('abc', {
-                url: '/abc',
-                templateUrl: 'templates/test.html',
-               
-
-            });
-            
-
     $locationProvider.html5Mode({
         enabled: true,
         requireBase: false
