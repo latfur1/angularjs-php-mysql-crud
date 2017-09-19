@@ -1,0 +1,84 @@
+
+     body { padding-top: 50px; }
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+     .content {min-height:600px}
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {min-height:600px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+.table > tbody > tr > td{
+    padding: 5px;
+    vertical-align: middle;
+  
+}
+
+.button {
+  
+    border: none;
+    color: white;
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+}
+.button:hover {
+    text-decoration: none;
+    color: white;
+    opacity: 0.8;
+  
+}
+
+.button-blue {background-color: #0000FF;} /* Blue */
+.button-red {background-color: #FF0000;} /* Red */ 
+.button-green {background-color: #008000;} /*Green */
+.button-purple  {background-color: purple;} /*purple  */
+.custom-alert {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    padding: 6px;
+    margin: 2px;
+    background: green;
+    border: 1px solid transparent;
+    border-radius: unset;
+}
+
+
+.mt-12{
+    margin-top: 12px;
+}
+.mb-50{
+    margin-bottom: 50px;
+}
+ .tlogo{
+        height:42px;
+        width:42px;
+        margin-top: 5px;
+    }

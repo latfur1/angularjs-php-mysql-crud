@@ -1,0 +1,242 @@
+
+
+    <div class="row ">
+        <div class="col-lg-2">
+          <h3>Student List</h3>   
+        </div>
+        <div class="col-lg-8 mt-12" >
+        
+        
+		
+          
+                            <div class="input-group col-md-12">
+                                <input type="text" id="search_input" value="" ng-model="search_input" class="form-control" placeholder="Search" />
+                                <span class="input-group-btn">
+                                    <button ng-click="std_ctrl.search_data(search_input)" class="button button-green" type="button">
+                                        <span class=" glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                    
+       </div>
+          <div class="col-lg-2 ">
+          <a  class="button button-purple mt-12 pull-right" data-toggle="modal" data-target="#create_student_info_modal"> Create Student</a> 
+      
+          </div>
+    </div>
+
+
+
+<p class="{{std_ctrl.alert_class}}">{{std_ctrl.msg}}</p>
+<table class="table">
+            <thead>
+                <tr>
+                     <th>Name</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Gender</th>
+                    <th class="text-right">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+          
+                <tr ng-repeat="students in std_ctrl.student_list">
+                     <td>{{students.student_id}}</td>
+                    <td>{{students.student_name}}</td>
+                    <td>{{students.email_address}}</td>
+                    <td>{{students.contact}}</td>
+                    <td>{{students.gender}}</td>
+                    
+                 
+                <td class="text-right">
+                 
+                     <button  data-toggle="modal"  class="button button-red" ng-click="std_ctrl.delete_student_info(students.student_id)">Delete</button> 
+                  
+                    <button  data-toggle="modal" data-target="#edit_student_info_modal"  class="button button-blue" ng-click="std_ctrl.edit_student_info(students.student_id)">Edit</button> 
+                  
+                    <button  data-toggle="modal" data-target="#view_student_info_modal"  class="button button-green" ng-click="std_ctrl.view_student_info(students.student_id)">View</button> 
+
+                    
+                
+                </td>
+                    
+                    
+                    
+                </tr>
+                
+                
+                
+
+           </tbody>
+        </table>
+    
+
+<div class="pull-right">
+
+    <pagination 
+      ng-model="currentPage"
+      total-items="total_row"
+      max-size="maxSize"  
+      boundary-links="true">
+    </pagination>
+</div>
+
+   <div class="modal fade" id="create_student_info_modal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+         
+           <form method="post"  id="create_student_info_frm" ng-submit="std_ctrl.addStudent(student)" >
+            <div class="form-group">
+                <label for="student_name">Name:</label>
+                <input type="text" ng-model="student.student_name" id="student_name" class="form-control" required maxlength="50">
+            </div>
+            <div class="form-group">
+                <label for="email_address">Email address:</label>
+                <input type="email" class="form-control" ng-model="student.email_address" id="email_address" required maxlength="50">
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact:</label>
+                <input type="text" class="form-control" ng-model="student.contact" id="contact"  maxlength="50">
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select class="form-control" ng-model="student.gender" id="gender">
+                    <option value="" selected>Select</option>
+                    <option value="Male" >Male</option>
+                    <option value="Female" >Female</option>
+                </select>
+            </div> 
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <input type="text" name="country" ng-model="student.country" id="country" class="form-control"  maxlength="50">
+            </div>
+                <div class="form-group mb-50">
+            <input type="submit" class="button button-green  pull-right"  value="Submit"/>
+                </div>
+                
+        </form> 
+    
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+
+
+  <div class="modal fade" id="edit_student_info_modal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit Student Info || {{std_ctrl.student_info.student_name}} </h4>
+        </div>
+        <div class="modal-body" >
+         
+            <form method="post"  id="edit_student_info_frm" name="edit_student_info_frm" ng-submit="std_ctrl.updateStudent()">
+                   <input ng-model="std_ctrl.student_info.student_id" type="hidden" />
+            <div class="form-group">
+                <label >Name:</label>
+                <input type="text"  ng-model="std_ctrl.student_info.student_name"  class="form-control" required maxlength="50">
+            </div>
+            <div class="form-group">
+                <label >Email address:</label>
+                <input type="email" class="form-control" ng-model="std_ctrl.student_info.email_address" required maxlength="50">
+            </div>
+            <div class="form-group">
+                <label >Contact:</label>
+                <input type="text" class="form-control" ng-model="std_ctrl.student_info.contact"  maxlength="50">
+            </div>
+            <div class="form-group">
+                <label >Gender:</label>
+                <select class="form-control" ng-model="std_ctrl.student_info.gender" >
+                    <option value="" selected>Select</option>
+                    <option value="Male" >Male</option>
+                    <option value="Female" >Female</option>
+                </select>
+            </div> 
+            <div class="form-group">
+                <label >Country:</label>
+                <input type="text" name="country" ng-model="std_ctrl.student_info.country" class="form-control"  maxlength="50">
+            </div>
+                <div class="form-group mb-50">
+            <input type="submit"  class="button button-green  pull-right"  value="Submit"/>
+                </div>
+                
+        </form> 
+    
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+
+
+ <div class="modal fade" id="view_student_info_modal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Student Info </h4>
+        </div>
+        <div class="modal-body" >
+         
+                 
+            <div class="form-group">
+                <label >Name:</label>
+                {{std_ctrl.view_student_info.student_name}}
+               
+            </div>
+            <div class="form-group">
+                <label >Email address:</label>
+                  {{std_ctrl.view_student_info.email_address}}
+              
+            </div>
+            <div class="form-group">
+                <label >Contact:</label>
+                     {{std_ctrl.view_student_info.contact}}
+             
+            </div>
+            <div class="form-group">
+                <label >Gender:</label>
+                         {{std_ctrl.view_student_info.gender}}
+           
+                
+            </div> 
+            <div class="form-group">
+                <label >Country:</label>
+                    {{std_ctrl.view_student_info.country}}
+               
+            </div>
+          
+        
+    
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
