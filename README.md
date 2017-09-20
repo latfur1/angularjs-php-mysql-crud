@@ -8,7 +8,7 @@
 6. MySQL
 
 
-<b>Feature:</b> 
+<b>Features:</b> 
 1. Create 
 2. Update 
 3. View 
