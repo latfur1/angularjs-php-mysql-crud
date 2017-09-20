@@ -4,7 +4,7 @@ myApp.config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
     $stateProvider
-            .state('home', {
+            .state('/', {
                 url: '/',
                 templateUrl: 'templates/student.html',
                 controller: 'student_contrloer',
@@ -12,7 +12,7 @@ myApp.config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
               
                 resolve: {
                     'title': ['$rootScope', function ($rootScope) {
-                            $rootScope.title = "Home";
+                            $rootScope.title = "ANGULARJS CODEGINITER MySQL CRUD";
                         }]
                 }
 
