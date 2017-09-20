@@ -1,4 +1,3 @@
-
 var myApp = angular.module('example_codeenable', ['ui.router', 'ui.bootstrap']);
 
 myApp.config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
@@ -28,6 +27,4 @@ myApp.config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
 
 
 });
-
-
 

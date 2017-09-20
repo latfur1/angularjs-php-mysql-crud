@@ -23,7 +23,7 @@ class Student
 
 
     
-    public function student_list($page=0,$search_input=''){
+    public function student_list($page=1,$search_input=''){
        $perpage=10;
        $page=($page-1)*$perpage;
        

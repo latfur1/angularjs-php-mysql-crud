@@ -31,7 +31,7 @@ myApp.controller('student_contrloer', function ($scope, $state, $http, $location
 
     this.addStudent = function (info) {
         $http.post('php/insert.php', info).then(function (response) {
-            vm.msg = response.data.meessage;
+            vm.msg = response.data.message;
             vm.alert_class = 'custom-alert';
             document.getElementById("create_student_info_frm").reset();
             $('#create_student_info_modal').modal('toggle');
@@ -49,7 +49,7 @@ myApp.controller('student_contrloer', function ($scope, $state, $http, $location
 
     this.updateStudent = function () {
         $http.put('php/update.php', this.student_info).then(function (response) {
-            vm.msg = response.data.meessage;
+            vm.msg = response.data.message;
             vm.alert_class = 'custom-alert';
             $('#edit_student_info_modal').modal('toggle');
             vm.loadData($scope.currentPage);
@@ -68,7 +68,7 @@ myApp.controller('student_contrloer', function ($scope, $state, $http, $location
 
     this.delete_student_info = function (student_id) {
         $http.delete('php/delete.php?student_id=' + student_id).then(function (response) {
-            vm.msg = response.data.meessage;
+            vm.msg = response.data.message;
             vm.alert_class = 'custom-alert';
             vm.loadData($scope.currentPage);
         });
