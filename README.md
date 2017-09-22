@@ -1,4 +1,4 @@
-# ANGULARJS-PHP-MySQL-CRUD
+# ANGULARJS PHP MySQL CRUD
 <b>Resource:</b> 
 1. HTML 
 2. CSS 
